@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -11,16 +12,9 @@ public enum PlayerType
 
 public class PlayerCtrl : NetworkBehaviour
 {
-    [Header("[ References ]")] 
-    public Transform handTr;
-    
-    [Header("[ Options ]")]
+    [Header("[ Values ]")] 
     public PlayerType playerType;
 
-    [Header("[ Values ]")] 
-    public int gold;
-    public bool isDraw;
-    
     private StateMachine<PlayerCtrl> _mStateMachine;
 
     private void Start()

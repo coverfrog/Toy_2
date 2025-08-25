@@ -19,6 +19,15 @@ public class UIPageLobby : UIPage
     private void OnEnable()
     {
         startBtn.gameObject.SetActive(NetworkManager.Singleton.IsServer);
+        
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
+    }
+
+    private void OnDisable()
+    {
+        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+        NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnected;
     }
 
     private void Start()
@@ -50,8 +59,10 @@ public class UIPageLobby : UIPage
             Spawn(networkClient);
         }
     }
-    
-    private void Spawn(NetworkClient networkClient)
+
+    private void Spawn(NetworkClient networkClient) => Spawn(networkClient.ClientId);
+
+    private void Spawn(ulong id)
     {
         UIItemPlayer item = _itemPlayers.FirstOrDefault(x => !x.gameObject.activeInHierarchy);
 
@@ -67,6 +78,18 @@ public class UIPageLobby : UIPage
             _itemPlayers.Add(item);
         }
         
-        item.Init(networkClient);
+        item.Init(id);
     }
+    
+    private void OnClientConnected(ulong id)
+    {
+        Spawn(id);
+    }
+    
+    private void OnClientDisconnected(ulong id)
+    {
+        _itemPlayers.FirstOrDefault(x => x.Id == id)?.SetActive(false);
+    }
+
+  
 }

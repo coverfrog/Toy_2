@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class SceneLoader
 {
+    private static readonly List<string> LocalSceneLoadedList = new();
+
     public static void LoadScene(
         string name, 
         MonoBehaviour mono, 
@@ -41,8 +44,11 @@ public static class SceneLoader
             }
             
             _ = SceneManager.UnloadSceneAsync(scene);
+            LocalSceneLoadedList.Remove(scene.name);
         }
 
+        LocalSceneLoadedList.Add(name);
+        
         UIPageLoading loading = UIManager.Instance.PageLoading;
         loading.OnProgress(0);
         loading.SetActive(true);
@@ -67,5 +73,33 @@ public static class SceneLoader
         }
         
         op.allowSceneActivation = true;
+    }
+
+    public static void LoadSceneNetwork(
+        string name)
+    {
+        int activeSceneCount = SceneManager.loadedSceneCount;
+        for (int i = 0; i < activeSceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+
+            if (scene.name.ToLower() == "global")
+            {
+                continue;
+            }
+
+            if (LocalSceneLoadedList.Contains(scene.name))
+            {
+                _ = SceneManager.UnloadSceneAsync(scene);
+                LocalSceneLoadedList.Remove(scene.name);
+            }
+
+            else
+            {
+                NetworkManager.Singleton.SceneManager.UnloadScene(scene);
+            }
+        }
+        
+        NetworkManager.Singleton.SceneManager.LoadScene(name, LoadSceneMode.Additive);
     }
 }

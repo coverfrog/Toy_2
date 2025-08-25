@@ -1,8 +1,13 @@
-﻿public class ContentGame : State<ContentManager>
+﻿using System.Collections.Generic;
+using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class ContentGame : State<ContentManager>
 {
     protected override void OnEnter(ContentManager owner)
     {
-        SceneLoader.LoadScene("Game", this, null, null, null);
+        SceneLoader.LoadSceneNetwork("Game");
     }
 
     protected override void OnUpdate(ContentManager owner)

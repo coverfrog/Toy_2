@@ -6,13 +6,15 @@ public class UIItemPlayer : UIItem
 {
     [Header("[ References ]")]
     [SerializeField] private TMP_Text nameText;
+
+    [Header("[ Values ]")]
+    [SerializeField] private ulong id;
+
+    public ulong Id => id;
     
-    private NetworkClient _networkClient;
-
-    public void Init(NetworkClient networkClient)
+    public void Init(ulong inId)
     {
-        _networkClient = networkClient;
-
-        nameText.text = $"Client {networkClient.ClientId}";
+        id = inId;
+        nameText.text = $"Client {id}";
     }
 }
