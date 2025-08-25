@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae8aaa449067be48bfad3814bc41f12, type: 3}
+  m_Name: "CARD_\uC774\uC911 \uCCA9\uC790"
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  id: 6
+  codeName: "\uC774\uC911 \uCCA9\uC790"
+  displayName: 
+  description: 
+  type: 0
+  frontTexture: {fileID: 2800000, guid: 44fc16f2bc657674b8c51e1b379d55cc, type: 3}
+  backTexture: {fileID: 0}
+  maxLevel: 0
+  dataList:
+  - rid: 299159908943396979
+  - rid: 299159908943396985
+  - rid: 299159908943396986
+  references:
+    version: 2
+    RefIds:
+    - rid: 299159908943396979
+      type: {class: CardData, ns: , asm: Assembly-CSharp}
+      data:
+        cardActions:
+        - rid: 299159908943396987
+    - rid: 299159908943396985
+      type: {class: CardData, ns: , asm: Assembly-CSharp}
+      data:
+        cardActions:
+        - rid: 299159908943396988
+    - rid: 299159908943396986
+      type: {class: CardData, ns: , asm: Assembly-CSharp}
+      data:
+        cardActions:
+        - rid: 299159908943396989
+    - rid: 299159908943396987
+      type: {class: CardMoveOnBoard, ns: , asm: Assembly-CSharp}
+      data:
+        moveCount: -1
+    - rid: 299159908943396988
+      type: {class: CardMoveOnBoard, ns: , asm: Assembly-CSharp}
+      data:
+        moveCount: 6
+    - rid: 299159908943396989
+      type: {class: CardMoveOnBoard, ns: , asm: Assembly-CSharp}
+      data:
+        moveCount: -1

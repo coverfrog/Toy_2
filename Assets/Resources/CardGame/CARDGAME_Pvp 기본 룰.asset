@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90b7db8b609a3d4d88aea71e5690300, type: 3}
+  m_Name: "CARDGAME_Pvp \uAE30\uBCF8 \uB8F0"
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  id: -1
+  codeName: "Pvp \uAE30\uBCF8 \uB8F0"
+  displayName: 
+  description: 

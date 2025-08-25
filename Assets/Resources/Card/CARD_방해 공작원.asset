@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae8aaa449067be48bfad3814bc41f12, type: 3}
+  m_Name: "CARD_\uBC29\uD574 \uACF5\uC791\uC6D0"
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  id: 3
+  codeName: "\uBC29\uD574 \uACF5\uC791\uC6D0"
+  displayName: 
+  description: 
+  type: 0
+  frontTexture: {fileID: 2800000, guid: ccab81f1595deb24e89efe7411dd5a8d, type: 3}
+  backTexture: {fileID: 0}
+  maxLevel: 0
+  dataList:
+  - rid: 299159908943396980
+  - rid: 299159908943397000
+  - rid: 299159908943397001
+  references:
+    version: 2
+    RefIds:
+    - rid: 299159908943396980
+      type: {class: CardData, ns: , asm: Assembly-CSharp}
+      data:
+        cardActions:
+        - rid: 299159908943396990
+    - rid: 299159908943396990
+      type: {class: CardMoveOnBoard, ns: , asm: Assembly-CSharp}
+      data:
+        moveCount: -1
+    - rid: 299159908943397000
+      type: {class: CardData, ns: , asm: Assembly-CSharp}
+      data:
+        cardActions:
+        - rid: 299159908943397002
+    - rid: 299159908943397001
+      type: {class: CardData, ns: , asm: Assembly-CSharp}
+      data:
+        cardActions:
+        - rid: 299159908943397003
+    - rid: 299159908943397002
+      type: {class: CardMoveOnBoard, ns: , asm: Assembly-CSharp}
+      data:
+        moveCount: -1
+    - rid: 299159908943397003
+      type: {class: CardMoveOnBoard, ns: , asm: Assembly-CSharp}
+      data:
+        moveCount: -2
